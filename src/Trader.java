@@ -60,8 +60,6 @@ public class Trader {
      */
     public String buyCrypto(CryptoCurrency currency, double amount) {
         double cost = amount * currency.getPrice();
-        System.out.println("Cost: " + cost + ", Funds: " + funds); // Debug statement
-
         if (this.canAfford(currency.getName(), amount)) {
             funds -= cost; // Deduct the cost from the trader's funds.
             portfolio.put(currency.getName(), portfolio.getOrDefault(currency.getName(), 0.0) + amount);
